@@ -1,6 +1,6 @@
-# Angular - Credit Card Reactive Template Demo App
+# Credit Card - Angular Reactive Forms Demo App
 
-Angular reactive template demo app...
+Angular reactive forms demo app...
 
 Demo App: https://creditcard-gamma-flax.vercel.app/
 

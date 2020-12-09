@@ -1,0 +1,33 @@
+<div class="field mb-3">
+  <label class="label">{{ label }}</label>
+  <div class="control">
+    <input
+      type="text"
+      [mask]="mask"
+      [ngClass]="{'is-danger': showErrors()}"
+      class="input" [formControl]="control"
+      [placeholder]="placeholder"/>
+  </div>
+  <ng-container *ngIf="showErrors()">
+    <div class="help is-danger" *ngIf="control.errors?.required">
+      Value is required
+    </div>
+    <div class="help is-danger" *ngIf="control.errors?.minlength">
+      Value you entered is
+      {{ control.errors?.minlength.actualLength }}
+      caracter long, but must be at least
+      {{ control.errors?.minlength.requiredLength }}
+      characters.
+    </div>
+    <div class="help is-danger" *ngIf="control.errors?.maxlength">
+      Value you entered is
+      {{ control.errors?.maxlength.actualLength }}
+      caracter long, but cannot be longer than
+      {{ control.errors?.maxlength.requiredLength }}
+      characters.
+    </div>
+    <div class="help is-danger" *ngIf="control.errors.pattern">
+      Invalid format
+    </div>
+  </ng-container>
+</div>
